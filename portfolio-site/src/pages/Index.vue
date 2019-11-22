@@ -11,11 +11,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.home-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>

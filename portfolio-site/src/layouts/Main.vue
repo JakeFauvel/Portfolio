@@ -34,11 +34,8 @@ query {
 }
 </static-query>
 
-<style>
+<style lang="scss" scoped>
 body {
-  width: 100%;
-  height: 100%;
-  position: absolute;
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   margin:0;
   padding:0;
@@ -46,25 +43,29 @@ body {
 }
 
 .layout {
-  grid-template-columns: 1fr 600px 1fr;
-  grid-template-rows: 1fr 100px;
-  display: grid;
+  width: 100%;
   height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+  position: absolute;
+  top: 20px;
+  @media only screen and (min-width: 768px) {
+    left: 20px;
+  }
 }
 
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-column: 2;
+  position: fixed;
+  bottom: 20px;
 }
 
 .nav__link {
