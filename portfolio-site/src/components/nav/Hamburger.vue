@@ -1,0 +1,183 @@
+<template>
+    <div class="menu-container">
+        <div v-on:click="hamburgerClick" class="hamburger-container">
+            <div ref="lineOne" class="line-one" :class="{open: hamburgerOpen}"></div>
+            <div ref="lineTwo" class="line-two" :class="{open: hamburgerOpen}"></div>
+            <div ref="lineThree" class="line-three" :class="{open: hamburgerOpen}"></div>
+        </div>
+        <div ref="menu" class="menu" :class="{closed: !hamburgerOpen}">
+            <a v-for="navItem in navItems" :href="navItem.route" class="nav-item">{{ navItem.label }}</a>
+        </div>
+        <div ref="menu-overflow" v-on:click="hamburgerClick" :class="{closed: !hamburgerOpen}" class="menu-overflow"></div>
+    </div>
+</template>
+<script>
+    let Velocity = require('velocity-animate');
+
+    module.exports = {
+        data: function () {
+            return {
+                hamburgerOpen: false,
+                navItems: {
+                    0: {
+                        label: 'Home',
+                        route: '/'
+                    },
+                    1: {
+                        label: 'About',
+                        route: '/about'
+                    },
+                    2: {
+                        label: 'Projects',
+                        route: '/projects'
+                    },
+                    3: {
+                        label: 'Contact',
+                        route: '/contact'
+                    },
+                }
+            }
+        },
+
+        methods: {
+            hamburgerClick() {
+                let lineOne = this.$refs.lineOne;
+                let lineTwo = this.$refs.lineTwo;
+                let lineThree = this.$refs.lineThree;
+                let menu = this.$refs.menu;
+                let menuOverflow = this.$refs['menu-overflow'];
+                if (!this.hamburgerOpen) {
+                    this.openHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow);
+                } else {
+                    this.closeHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow);
+                }
+            },
+
+            openHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow) {
+                // Set hamburger state / emit event
+                this.hamburgerOpen = !this.hamburgerOpen;
+                this.$emit('hamburgerClick', this.hamburgerOpen);
+                // Animate the first line
+                Velocity(lineOne, {translateY: 15}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                        Velocity(lineOne, {rotateZ: 45}, {duration: 200,  easing: 'easeOutElastic'});
+                    }});
+                // Hide the second line
+                lineTwo.style.display = 'none';
+                // Display the menu / overflow
+                menu.style.display = 'flex';
+                menuOverflow.style.display = 'flex';
+                // Animate the menu / overflow opacity
+                Velocity(menu, {opacity: 1}, {duration: 250});
+                Velocity(menuOverflow, {opacity: 0.5}, {duration: 250});
+                // Animate third line
+                Velocity(lineThree, {translateY: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                        Velocity(lineThree, {rotateZ: -45}, {duration: 200, easing: 'easeOutElastic'});
+                    }});
+            },
+
+            closeHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow) {
+                // Set hamburger state/emit event
+                this.hamburgerOpen = !this.hamburgerOpen;
+                this.$emit('hamburgerClick', this.hamburgerOpen);
+                // Animate the first line
+                Velocity(lineOne, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                        Velocity(lineOne, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
+                    }});
+                // Show the second line
+                lineTwo.style.display = 'block';
+                // Animate opacity / hide menu
+                Velocity(menu, {opacity: 0}, {duration: 100, complete: function() {
+                        menu.style.display = 'none';
+                    }});
+                // Animate opacity / hide menuOverflow
+                Velocity(menuOverflow, {opacity: 0}, {duration: 100, complete: function() {
+                        menuOverflow.style.display = 'none';
+                    }});
+                // Animate the third line
+                Velocity(lineThree, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                        Velocity(lineThree, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
+                    }});
+            }
+        }
+    }
+</script>
+<style scoped lang="scss">
+    .menu-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hamburger-container {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+    }
+    .line-one, .line-two, .line-three {
+        background: #212121;
+        border-radius: 6px;
+        width: 35px;
+        height: 5px;
+        transform-origin: center;
+        @media only screen and (min-width: 768px) {
+            display: none !important;
+        }
+    }
+    .line-one.open, .line-two.open, .line-three.open {
+        background: #FFFFFF;
+    }
+    .line-two {
+        margin-top: 10px;
+    }
+    .line-three {
+        margin-top: 10px;
+    }
+    .menu {
+        display: none;
+        opacity: 0;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1;
+        width: 70%;
+        height: 100vh;
+        background: #212121;
+        .nav-item {
+            text-decoration: none;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            color: #FFFFFF;
+            text-align: center;
+            margin-top: 20px;
+            @media only screen and (min-width: 768px) {
+                font-size: 52px;
+            }
+        }
+        @media only screen and (min-width: 1280px) {
+            display: none !important;
+        }
+    }
+    .menu.closed {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: none;
+    }
+    .menu-overflow {
+        display: none;
+        position: absolute;
+        background: #FFFFFF;
+        opacity: 0;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1;
+        width: 30%;
+        height: 100vh;
+        @media only screen and (min-width: 1280px) {
+            display: none !important;
+        }
+    }
+</style>

@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+    <hamburger @hamburgerClick="onHamburgerClick"></hamburger>
     <header class="header">
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
@@ -16,15 +17,29 @@
 </template>
 
 <script>
+  import Hamburger from '~/components/nav/Hamburger.vue'
   export default {
+    components: {
+      Hamburger
+    },
+
     data () {
       return {
         copyrightText: `${new Date().getFullYear()} Jake Fauvel`
       }
     },
+
+    methods: {
+      onHamburgerClick(hamburgerState) {
+        if (hamburgerState) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = 'initial';
+        }
+      },
+    }
   }
 </script>
-
 
 <static-query>
 query {
@@ -34,14 +49,16 @@ query {
 }
 </static-query>
 
-<style lang="scss" scoped>
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
+<style>
+  body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin:0;
+    padding:0;
+    line-height: 1.5;
+  }
+</style>
 
+<style lang="scss" scoped>
 .layout {
   width: 100%;
   height: 100%;
@@ -70,5 +87,8 @@ footer {
 
 .nav__link {
   margin-left: 20px;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 }
 </style>
