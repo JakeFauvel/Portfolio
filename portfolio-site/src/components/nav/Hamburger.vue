@@ -21,7 +21,7 @@
                 navItems: {
                     0: {
                         label: 'Home',
-                        route: '/'
+                        route: '/home'
                     },
                     1: {
                         label: 'About',

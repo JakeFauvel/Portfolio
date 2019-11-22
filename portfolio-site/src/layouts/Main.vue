@@ -50,8 +50,10 @@ query {
 </static-query>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
   body {
-    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Raleway', sans-serif;;
     margin:0;
     padding:0;
     line-height: 1.5;
