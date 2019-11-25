@@ -1,5 +1,6 @@
 <template>
   <Layout class="page-layout">
+    <div class="triangle-top"></div>
     <div class="triangle-top-right"></div>
     <div class="home-initials">
       <span class="first-letter">Jake</span>
@@ -25,6 +26,20 @@ export default {
   .page-layout {
     width: 100%;
   }
+  .triangle-top {
+    background: #87FFA9;
+    width: 650px;
+    height: 500px;
+    position: absolute;
+    top: -330px;
+    left: -50px;
+    transform: rotate(20deg);
+    display: none;
+    z-index: -1;
+    @media only screen and (min-width: 1280px) {
+      display: initial;
+    }
+  }
   .triangle-top-right {
     width: 350px;
     height: 141px;
@@ -33,6 +48,18 @@ export default {
     right: -155px;
     top: -35px;
     transform: rotate(35deg);
+    @media only screen and (min-width: 768px) {
+      width: 561px;
+      height: 306px;
+      right: -205px;
+      top: -120px;
+    }
+    @media only screen and (min-width: 1920px) {
+      width: 1080px;
+      height: 440px;
+      right: -345px;
+      top: -195px;
+    }
   }
   .home-initials {
     width: 80%;
@@ -85,11 +112,20 @@ export default {
   .hexagon-bottom-left {
     position: absolute;
     width: 300px;
-    left: -230px;
+    left: -200px;
     bottom: -75px;
     height: 180px;
     background-color: #F6C5A8;
     margin: 86.60px 0;
+    @media only screen and (min-width: 768px) {
+      height: 259.81px;
+      margin: 129.90px 0;
+      width: 450px;
+      left: -300px;
+    }
+    @media only screen and (min-width: 1280px) {
+      left: -200px;
+    }
   }
   .hexagon-bottom-left:before,
   .hexagon-bottom-left:after {
@@ -98,15 +134,25 @@ export default {
     width: 0;
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
+    @media only screen and (min-width: 768px) {
+      border-left: 225px solid transparent;
+      border-right: 225px solid transparent;
+    }
   }
   .hexagon-bottom-left:before {
     bottom: 100%;
     border-bottom: 86.60px solid #F6C5A8;
+    @media only screen and (min-width: 768px) {
+      border-bottom: 129.90px solid #F6C5A8;
+    }
   }
   .hexagon-bottom-left:after {
     top: 100%;
     width: 0;
     border-top: 86.60px solid #F6C5A8;
+    @media only screen and (min-width: 768px) {
+      border-bottom: 129.90px solid #F6C5A8;
+    }
   }
   .circle-bottom-right {
     width: 250px;
@@ -116,5 +162,19 @@ export default {
     position: absolute;
     right: -170px;
     bottom: 10px;
+    @media only screen and (min-width: 768px) {
+      width: 500px;
+      height: 500px;
+      border-radius: 300px;
+      right: -330px;
+      bottom: -45px;
+    }
+    @media only screen and (min-width: 1920px) {
+      width: 500px;
+      height: 500px;
+      border-radius: 300px;
+      right: -250px;
+      bottom: -175px;
+    }
   }
 </style>
