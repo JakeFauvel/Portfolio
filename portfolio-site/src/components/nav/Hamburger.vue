@@ -3,7 +3,7 @@
         <div v-on:click="hamburgerClick" class="hamburger-container">
             <div ref="lineOne" class="line-one" :class="{open: hamburgerOpen}"></div>
             <div ref="lineTwo" class="line-two" :class="{open: hamburgerOpen}"></div>
-            <div ref="lineThree" class="line-three" :class="{open: hamburgerOpen}"></div>
+            <div ref="menuText" class="menu-text" :class="{open: hamburgerOpen}">MENU</div>
         </div>
         <div ref="menu" class="menu" :class="{closed: !hamburgerOpen}">
             <a v-for="navItem in navItems" :href="navItem.route" class="nav-item">{{ navItem.label }}</a>
@@ -43,26 +43,24 @@
             hamburgerClick() {
                 let lineOne = this.$refs.lineOne;
                 let lineTwo = this.$refs.lineTwo;
-                let lineThree = this.$refs.lineThree;
+                let menuText = this.$refs.menuText;
                 let menu = this.$refs.menu;
                 let menuOverflow = this.$refs['menu-overflow'];
                 if (!this.hamburgerOpen) {
-                    this.openHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow);
+                    this.openHamburger(lineOne, lineTwo, menuText, menu, menuOverflow);
                 } else {
-                    this.closeHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow);
+                    this.closeHamburger(lineOne, lineTwo, menuText, menu, menuOverflow);
                 }
             },
 
-            openHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow) {
+            openHamburger(lineOne, lineTwo, menuText, menu, menuOverflow) {
                 // Set hamburger state / emit event
                 this.hamburgerOpen = !this.hamburgerOpen;
                 this.$emit('hamburgerClick', this.hamburgerOpen);
                 // Animate the first line
-                Velocity(lineOne, {translateY: 15}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                Velocity(lineOne, {translateY: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
                         Velocity(lineOne, {rotateZ: 45}, {duration: 200,  easing: 'easeOutElastic'});
                     }});
-                // Hide the second line
-                lineTwo.style.display = 'none';
                 // Display the menu / overflow
                 menu.style.display = 'flex';
                 menuOverflow.style.display = 'flex';
@@ -70,12 +68,12 @@
                 Velocity(menu, {opacity: 1}, {duration: 250});
                 Velocity(menuOverflow, {opacity: 0.5}, {duration: 250});
                 // Animate third line
-                Velocity(lineThree, {translateY: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
-                        Velocity(lineThree, {rotateZ: -45}, {duration: 200, easing: 'easeOutElastic'});
+                Velocity(lineTwo, {translateY: -15}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                        Velocity(lineTwo, {rotateZ: -45}, {duration: 200, easing: 'easeOutElastic'});
                     }});
             },
 
-            closeHamburger(lineOne, lineTwo, lineThree, menu, menuOverflow) {
+            closeHamburger(lineOne, lineTwo, menuText, menu, menuOverflow) {
                 // Set hamburger state/emit event
                 this.hamburgerOpen = !this.hamburgerOpen;
                 this.$emit('hamburgerClick', this.hamburgerOpen);
@@ -94,8 +92,8 @@
                         menuOverflow.style.display = 'none';
                     }});
                 // Animate the third line
-                Velocity(lineThree, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
-                        Velocity(lineThree, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
+                Velocity(lineTwo, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                        Velocity(lineTwo, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
                     }});
             }
         }
@@ -110,28 +108,35 @@
 
     .hamburger-container {
         position: absolute;
-        top: 20px;
-        left: 20px;
+        top: 35px;
+        left: 30px;
         z-index: 2;
     }
-    .line-one, .line-two, .line-three {
+    .line-one, .line-two {
         background: #212121;
         border-radius: 6px;
-        width: 35px;
+        width: 45px;
         height: 5px;
         transform-origin: center;
         @media only screen and (min-width: 768px) {
             display: none !important;
         }
     }
-    .line-one.open, .line-two.open, .line-three.open {
+    .line-one.open, .line-two.open {
         background: #FFFFFF;
+    }
+    .menu-text.open {
+        color: #FFFFFF;
     }
     .line-two {
         margin-top: 10px;
     }
-    .line-three {
+    .menu-text {
+        font-size: 15px;
         margin-top: 10px;
+        @media only screen and (min-width: 768px) {
+            display: none;
+        }
     }
     .menu {
         display: none;
