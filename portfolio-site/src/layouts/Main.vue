@@ -50,7 +50,7 @@ query {
 </static-query>
 
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,800&display=swap');
 
   body {
     font-family: 'Raleway', sans-serif;;
@@ -90,6 +90,10 @@ footer {
 
 .nav__link {
   margin-left: 20px;
+  font-weight: bold;
+  color: #212121;
+  font-size: 25px;
+  text-decoration: none;
   @media only screen and (max-width: 767px) {
     display: none;
   }

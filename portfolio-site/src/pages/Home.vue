@@ -17,7 +17,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Jake Fauvel - Software Engineer - Brighton, East Sussex'
   }
 }
 </script>
