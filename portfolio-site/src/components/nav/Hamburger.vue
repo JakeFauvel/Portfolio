@@ -118,7 +118,7 @@
         width: 45px;
         height: 5px;
         transform-origin: center;
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 1280px) {
             display: none !important;
         }
     }
@@ -134,7 +134,7 @@
     .menu-text {
         font-size: 15px;
         margin-top: 10px;
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 1280px) {
             display: none;
         }
     }

@@ -94,7 +94,7 @@ footer {
   color: #212121;
   font-size: 25px;
   text-decoration: none;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 1279px) {
     display: none;
   }
 }

@@ -45,14 +45,15 @@ export default {
     height: 141px;
     background: #9DC2FF;
     position: absolute;
-    right: -155px;
-    top: -35px;
+    right: -125px;
+    top: -28px;
     transform: rotate(35deg);
+    z-index: -1;
     @media only screen and (min-width: 768px) {
-      width: 561px;
+      width: 625px;
       height: 306px;
-      right: -205px;
-      top: -120px;
+      right: -150px;
+      top: -100px;
     }
     @media only screen and (min-width: 1920px) {
       width: 1080px;
@@ -113,7 +114,7 @@ export default {
     position: absolute;
     width: 300px;
     left: -200px;
-    bottom: -75px;
+    bottom: -125px;
     height: 180px;
     background-color: #F6C5A8;
     margin: 86.60px 0;
