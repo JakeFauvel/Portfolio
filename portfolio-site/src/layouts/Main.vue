@@ -51,7 +51,6 @@ query {
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,800&display=swap');
-
   body {
     font-family: 'Raleway', sans-serif;;
     margin:0;
@@ -61,41 +60,5 @@ query {
 </style>
 
 <style lang="scss" scoped>
-.layout {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.header {
-  position: absolute;
-  top: 20px;
-  @media only screen and (min-width: 768px) {
-    left: 20px;
-  }
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 20px;
-}
-
-.nav__link {
-  margin-left: 20px;
-  font-weight: bold;
-  color: #212121;
-  font-size: 25px;
-  text-decoration: none;
-  @media only screen and (max-width: 1279px) {
-    display: none;
-  }
-}
+  @import '../pages/styles/main';
 </style>

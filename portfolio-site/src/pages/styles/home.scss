@@ -14,7 +14,7 @@
   display: none;
   z-index: -1;
   animation: nonStandardOrbit 40s linear infinite;
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1024px) {
     display: initial;
   }
 }
