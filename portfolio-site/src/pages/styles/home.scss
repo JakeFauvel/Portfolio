@@ -13,7 +13,7 @@
   transform: rotate(20deg);
   display: none;
   z-index: -1;
-  animation: nonStandardOrbit 40s linear infinite;
+  animation: nonStandardOrbit 50s ease-in-out infinite;
   @media only screen and (min-width: 1024px) {
     display: initial;
   }
@@ -27,7 +27,7 @@
   top: -28px;
   transform: rotate(35deg);
   z-index: -1;
-  animation: right 3s ease-in-out infinite;
+  animation: right 4s ease-in-out infinite;
   @media only screen and (min-width: 768px) {
     width: 625px;
     height: 306px;
@@ -39,7 +39,7 @@
     height: 440px;
     right: -345px;
     top: -195px;
-    animation: right1920 3s linear infinite;
+    animation: right1920 4s ease-in-out infinite;
   }
 }
 .home-initials {
@@ -98,7 +98,7 @@
   height: 180px;
   background-color: #F6C5A8;
   margin: 86.60px 0;
-  animation: orbitLeft 6s linear infinite;
+  animation: orbitLeft 6s ease-in-out infinite;
   @media only screen and (min-width: 768px) {
     height: 259.81px;
     margin: 129.90px 0;
@@ -144,7 +144,7 @@
   position: absolute;
   right: -170px;
   bottom: 10px;
-  animation: orbitRight 4s linear infinite;
+  animation: orbitRight 4.5s ease-in-out infinite;
   @media only screen and (min-width: 768px) {
     width: 500px;
     height: 500px;

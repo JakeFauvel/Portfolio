@@ -25,7 +25,11 @@
 
     data () {
       return {
-        copyrightText: `${new Date().getFullYear()} Jake Fauvel`
+        copyrightText: `${new Date().getFullYear()} Jake Fauvel`,
+        isHomeActive: false,
+        isAboutActive: false,
+        isProjectsActive: false,
+        isContactActive: false
       }
     },
 
@@ -36,7 +40,7 @@
         } else {
           document.body.style.overflow = 'initial';
         }
-      },
+      }
     }
   }
 </script>

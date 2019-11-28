@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/portfolio-site.iml" filepath="$PROJECT_DIR$/.idea/portfolio-site.iml" />
-      <module fileurl="file://$USER_HOME$/code/laravel/vinylhub/.idea/vinylhub.iml" filepath="$USER_HOME$/code/laravel/vinylhub/.idea/vinylhub.iml" />
     </modules>
   </component>
 </project>
