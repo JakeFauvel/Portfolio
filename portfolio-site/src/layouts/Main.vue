@@ -1,7 +1,7 @@
 <template>
-  <div class="layout">
-    <hamburger @hamburgerClick="onHamburgerClick"></hamburger>
+  <div class="main-layout">
     <header class="header">
+      <hamburger></hamburger>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
@@ -31,16 +31,6 @@
         isProjectsActive: false,
         isContactActive: false
       }
-    },
-
-    methods: {
-      onHamburgerClick(hamburgerState) {
-        if (hamburgerState) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = 'initial';
-        }
-      }
     }
   }
 </script>
@@ -52,17 +42,28 @@ query {
   }
 }
 </static-query>
-
 <style>
   @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,800&display=swap');
+  html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
   body {
-    font-family: 'Raleway', sans-serif;;
-    margin:0;
-    padding:0;
-    line-height: 1.5;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  footer {
+    bottom: 20px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+  .main-layout {
+    overflow: hidden;
   }
 </style>
-
 <style lang="scss" scoped>
   @import '../pages/styles/main';
 </style>

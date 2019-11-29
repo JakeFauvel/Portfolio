@@ -1,0 +1,21 @@
+.about-layout {
+  overflow: initial;
+}
+
+.jf-image {
+  width: 188px;
+  height: 170px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 120px 25px 25px 25px;
+}
+
+.about-title {
+  font-size: 36px;
+  font-weight: 600;
+}

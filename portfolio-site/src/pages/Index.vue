@@ -1,16 +1,18 @@
 <template>
   <Layout class="page-layout">
-    <div class="triangle-top"></div>
-    <div class="triangle-top-right"></div>
-    <div class="home-initials">
-      <span class="first-letter">Jake</span>
-      <span class="second-letter">Fauvel</span>
+    <div class="home-container">
+      <div class="triangle-top"></div>
+      <div class="triangle-top-right"></div>
+      <div class="home-initials">
+        <span class="first-letter">Jake</span>
+        <span class="second-letter">Fauvel</span>
+      </div>
+      <div class="home-title">
+        <span>Software Engineer</span>
+      </div>
+      <div class="hexagon-bottom-left"></div>
+      <div class="circle-bottom-right"></div>
     </div>
-    <div class="home-title">
-      <span>Software Engineer</span>
-    </div>
-    <div class="hexagon-bottom-left"></div>
-    <div class="circle-bottom-right"></div>
   </Layout>
 </template>
 
