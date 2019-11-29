@@ -3,15 +3,22 @@
     <div class="home-container">
       <div class="triangle-top"></div>
       <div class="triangle-top-right"></div>
+
       <div class="home-initials">
         <span class="first-letter">Jake</span>
         <span class="second-letter">Fauvel</span>
       </div>
+
       <div class="home-title">
         <span>Software Engineer</span>
       </div>
+
       <div class="hexagon-bottom-left"></div>
       <div class="circle-bottom-right"></div>
+
+      <footer>
+        &copy; {{ copyrightText }}
+      </footer>
     </div>
   </Layout>
 </template>
@@ -20,12 +27,22 @@
 export default {
   metaInfo: {
     title: 'Jake Fauvel - Software Engineer - Brighton, East Sussex'
+  },
+
+  data() {
+    return {
+      copyrightText: `${new Date().getFullYear()} Jake Fauvel`
+    }
   }
 }
 </script>
-
+<style>
+  body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+</style>
 <style lang="scss" scoped>
-  @import '../styles/orbit';
   @import './styles/home';
-  @import '../styles/rightAnimation';
 </style>

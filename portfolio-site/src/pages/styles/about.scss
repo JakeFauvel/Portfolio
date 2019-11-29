@@ -1,21 +1,113 @@
+@import '../../styles/orbit';
+@import '../../styles/nonStandardOrbit';
+@import '../../styles/rightAnimation';
+
 .about-layout {
   overflow: initial;
 }
 
 .jf-image {
   width: 188px;
-  height: 170px;
+  height: 172px;
+  @media only screen and (min-width: 768px) {
+    width: 260px;
+    height: 235px;
+  }
 }
 
 .about-container {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 120px 25px 25px 25px;
+  padding: 120px 25px 0 25px;
+  overflow: hidden;
+  @media only screen and (min-width: 768px) {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.circle-top-right {
+  width: 225px;
+  height: 225px;
+  background: #FFFBC7;
+  border-radius: 200px;
+  position: absolute;
+  right: -100px;
+  top: -120px;
+  z-index: -1;
+  @media only screen and (min-width: 768px) {
+    width: 450px;
+    height: 450px;
+    border-radius: 450px;
+    right: -300px;
+    top: -120px;
+  }
+}
+
+.triangle-bottom-right {
+  background: #87FFA9;
+  width: 300px;
+  height: 300px;
+  bottom: -150px;
+  right: -200px;
+  position: absolute;
+  transform: rotate(35deg);
+  z-index: -1;
+  @media only screen and (min-width: 768px) {
+    width: 450px;
+    height: 450px;
+    bottom: -300px;
+  }
 }
 
 .about-title {
   font-size: 36px;
   font-weight: 600;
+}
+
+.hexagon-left {
+  position: absolute;
+  width: 300px;
+  left: -150px;
+  bottom: 200px;
+  height: 180px;
+  background-color: #F6C5A8;
+  margin: 86.60px 0;
+  z-index: -1;
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.hexagon-left:before,
+.hexagon-left:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  @media only screen and (min-width: 768px) {
+    border-left: 225px solid transparent;
+    border-right: 225px solid transparent;
+  }
+}
+.hexagon-left:before {
+  bottom: 100%;
+  border-bottom: 86.60px solid #F6C5A8;
+  @media only screen and (min-width: 768px) {
+    border-bottom: 129.90px solid #F6C5A8;
+  }
+}
+.hexagon-left:after {
+  top: 100%;
+  width: 0;
+  border-top: 86.60px solid #F6C5A8;
+  @media only screen and (min-width: 768px) {
+    border-bottom: 129.90px solid #F6C5A8;
+  }
 }

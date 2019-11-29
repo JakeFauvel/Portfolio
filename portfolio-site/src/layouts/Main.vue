@@ -1,7 +1,7 @@
 <template>
-  <div class="main-layout">
+  <div ref="mainLayout" class="main-layout">
     <header class="header">
-      <hamburger></hamburger>
+      <hamburger @hamburgerClick="onHamburgerClick"></hamburger>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
         <g-link class="nav__link" to="/about/">About</g-link>
@@ -10,9 +10,6 @@
       </nav>
     </header>
     <slot/>
-    <footer>
-      &copy; {{ copyrightText }}
-    </footer>
   </div>
 </template>
 
@@ -29,7 +26,19 @@
         isHomeActive: false,
         isAboutActive: false,
         isProjectsActive: false,
-        isContactActive: false
+        isContactActive: false,
+        hamburgerClicked: false
+      }
+    },
+
+    methods: {
+      onHamburgerClick() {
+        this.hamburgerClicked = !this.hamburgerClicked;
+        if (this.hamburgerClicked) {
+          this.$refs.mainLayout.style.overflow = 'hidden';
+        } else {
+          this.$refs.mainLayout.style.overflow = 'initial';
+        }
       }
     }
   }
@@ -53,6 +62,7 @@ query {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
+    position: relative;
   }
   footer {
     bottom: 20px;
