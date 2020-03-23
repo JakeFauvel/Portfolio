@@ -1,8 +1,11 @@
+<!--suppress ALL -->
 <template>
   <Layout class="about-layout">
     <div class="about-container">
       <div class="circle-top-right"></div>
       <div class="hexagon-left"></div>
+      <div class="triangle-left"></div>
+
       <img class="jf-image" src="../assets/jf.jpg" alt="Jake Fauvel">
       <h1 class="about-title">Hey, I'm Jake.</h1>
       <div>

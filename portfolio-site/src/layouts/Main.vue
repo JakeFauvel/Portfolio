@@ -65,10 +65,15 @@ query {
     position: relative;
   }
   footer {
-    bottom: 20px;
     position: absolute;
     text-align: center;
     width: 100%;
+    height: 75px;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
   .main-layout {
     overflow: hidden;

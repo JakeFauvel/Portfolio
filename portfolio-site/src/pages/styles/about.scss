@@ -3,7 +3,7 @@
 @import '../../styles/rightAnimation';
 
 .about-layout {
-  overflow: initial;
+  overflow: auto;
 }
 
 .jf-image {
@@ -25,10 +25,11 @@
   align-items: center;
   padding: 120px 25px 0 25px;
   overflow: hidden;
+
   @media only screen and (min-width: 768px) {
-    height: 100%;
-    width: 100%;
-    padding: 0;
+    min-height: calc(100% - 100px);
+    width: calc(100% - 50px);
+    padding: 100px 25px 0 25px;
   }
 }
 
@@ -47,6 +48,21 @@
     border-radius: 450px;
     right: -300px;
     top: -120px;
+  }
+}
+
+.triangle-left {
+  display: none;
+  background-color: #F6C5A8;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  transform: rotate(35deg);
+  z-index: -1;
+  left: -200px;
+  top: 200px;
+  @media only screen and (min-width: 768px) {
+    display: initial;
   }
 }
 
