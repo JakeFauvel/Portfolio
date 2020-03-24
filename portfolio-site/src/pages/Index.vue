@@ -15,10 +15,6 @@
 
       <div class="hexagon-bottom-left"></div>
       <div class="circle-bottom-right"></div>
-
-      <footer>
-        &copy; {{ copyrightText }}
-      </footer>
     </div>
   </Layout>
 </template>
@@ -27,12 +23,6 @@
 export default {
   metaInfo: {
     title: 'Jake Fauvel - Software Engineer - Brighton, East Sussex'
-  },
-
-  data() {
-    return {
-      copyrightText: `${new Date().getFullYear()} Jake Fauvel`
-    }
   }
 }
 </script>

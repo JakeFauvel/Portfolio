@@ -9,7 +9,7 @@
         <g-link class="nav__link" to="/contact/">Contact</g-link>
       </nav>
     </header>
-    <slot/>
+    <slot></slot>
   </div>
 </template>
 
@@ -22,7 +22,6 @@
 
     data () {
       return {
-        copyrightText: `${new Date().getFullYear()} Jake Fauvel`,
         isHomeActive: false,
         isAboutActive: false,
         isProjectsActive: false,
