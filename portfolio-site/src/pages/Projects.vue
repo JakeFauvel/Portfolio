@@ -1,10 +1,10 @@
 <template>
-  <Layout>
-    <h1>Projects</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
+  <Layout class="projects-layout">
+    <div class="about-container">
+      <div class="triangle-top"></div>
+    </div>
   </Layout>
 </template>
-
 <script>
 export default {
   metaInfo: {
@@ -12,3 +12,21 @@ export default {
   }
 }
 </script>
+<style>
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.projects-layout footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  height: 75px;
+}
+</style>
+<style lang="scss" scoped>
+@import './styles/projects';
+</style>
+

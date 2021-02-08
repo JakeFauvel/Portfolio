@@ -1,0 +1,16 @@
+.contact-layout {
+  overflow: auto;
+}
+
+.triangle-top {
+  @media only screen and (min-width: 1024px) {
+    background-color: #d79797;
+    width: 800px;
+    height: 850px;
+    position: absolute;
+    transform: rotate(165deg);
+    z-index: -1;
+    left: -170px;
+    top: -700px;
+  }
+}
