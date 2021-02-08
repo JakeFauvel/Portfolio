@@ -62,6 +62,10 @@ query {
     margin: 0;
     padding: 0;
     position: relative;
+    background: #212227;
+  }
+  body.light {
+    background: #FFF;
   }
   footer {
     position: absolute;
