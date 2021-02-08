@@ -1,6 +1,6 @@
 <template>
   <div ref="mainLayout" class="main-layout">
-    <header class="header">
+    <header class="header" :class="{open: this.hamburgerClicked}">
       <hamburger @hamburgerClick="onHamburgerClick"></hamburger>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>

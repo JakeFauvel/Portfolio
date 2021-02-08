@@ -126,9 +126,9 @@
 </script>
 <style scoped lang="scss">
     .menu-container {
-        position: absolute;
-        width: 125px;
-        height: 125px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
     }
     .menu-container.open {
         width: 100%;
