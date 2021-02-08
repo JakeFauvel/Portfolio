@@ -1,9 +1,9 @@
 <template>
-    <div class="menu-container">
+    <div class="menu-container" :class="{open: hamburgerOpen}">
         <div v-on:click="hamburgerClick" class="hamburger-container">
             <div ref="lineOne" class="line-one" :class="{open: hamburgerOpen}"></div>
             <div ref="lineTwo" class="line-two" :class="{open: hamburgerOpen}"></div>
-            <div ref="menuText" class="menu-text" :class="{open: hamburgerOpen}">MENU</div>
+            <div ref="menuText" class="menu-text" :class="{open: hamburgerOpen}">{{ menuText }}</div>
         </div>
         <div ref="menu" class="menu" :class="{closed: !hamburgerOpen}">
             <a v-for="navItem in navItems" :href="navItem.route" class="nav-item">{{ navItem.label }}</a>
@@ -38,6 +38,12 @@
                     },
                 }
             }
+        },
+
+        computed: {
+          menuText() {
+            return this.hamburgerOpen ? 'CLOSE' : 'MENU';
+          },
         },
 
         methods: {
@@ -87,7 +93,7 @@
                 // Set hamburger state/emit event
                 this.hamburgerOpen = !this.hamburgerOpen;
                 this.$emit('hamburgerClick', this.hamburgerOpen);
-                
+
                 // Animate the first line
                 Velocity(lineOne, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
                     Velocity(lineOne, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
@@ -121,6 +127,10 @@
 <style scoped lang="scss">
     .menu-container {
         position: absolute;
+        width: 125px;
+        height: 125px;
+    }
+    .menu-container.open {
         width: 100%;
         height: 100%;
     }
@@ -132,11 +142,16 @@
         z-index: 2;
     }
     .line-one, .line-two {
-        background: #212121;
+        background: #FFF;
         border-radius: 6px;
         width: 45px;
         height: 5px;
         transform-origin: center;
+
+        @media only screen and (min-width: 1024px) {
+          background: #212227;
+        }
+
         @media only screen and (min-width: 1280px) {
             display: none !important;
         }
@@ -153,6 +168,12 @@
     .menu-text {
         font-size: 15px;
         margin-top: 10px;
+        color: #FFF;
+
+        @media only screen and (min-width: 1024px) {
+          color: #212227;
+        }
+
         @media only screen and (min-width: 1280px) {
             display: none;
         }
@@ -166,7 +187,8 @@
         z-index: 1;
         width: 70%;
         height: 100vh;
-        background: #212121;
+        background: #212227;
+
         .nav-item {
             text-decoration: none;
             font-family: 'Raleway', sans-serif;
