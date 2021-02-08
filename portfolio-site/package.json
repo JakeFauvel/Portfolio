@@ -7,10 +7,11 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@babel/core": "^7.12.13",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^8.0.0",
     "velocity-animate": "^1.5.2"
   }

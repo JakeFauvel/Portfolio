@@ -1,4 +1,4 @@
-<!--suppress ALL -->
+<!-- Suppress ALL -->
 <template>
   <Layout class="about-layout">
     <div class="about-container">
@@ -36,7 +36,7 @@
 
         <p>However, my previous role at <a href="https://tillo.io" target="_blank" style="color: #5854E5;">Tillo</a> required me to dabble in many other tools and technologies.</p>
 
-        <p>Want to know more or see a full list of my skills? <a href="">Take a look at my CV</a> or my <a href="">personal projects.</a></p>
+        <p>Want to know more or see a full list of my skills? <a href="" style="color: #FFF; cursor: pointer;">Take a look at my CV</a> or my <a href="" style="color: #FFF; cursor: pointer;">personal projects.</a></p>
 
       </div>
       <div class="triangle-bottom-right"></div>

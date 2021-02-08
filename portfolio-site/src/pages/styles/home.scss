@@ -99,6 +99,7 @@
   font-weight: 300;
   position: relative;
   top: 10px;
+  color: #FFF;
 
   @media only screen and (min-width: 375px) {
     font-size: 25px;
@@ -106,7 +107,7 @@
 
   @media only screen and (min-width: 768px) {
     font-size: 30px;
-    top: -30px;
+    top: -20px;
   }
 
   @media only screen and (min-width: 1280px) {

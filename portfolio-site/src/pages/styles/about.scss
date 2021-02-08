@@ -19,18 +19,20 @@
   position: absolute;
   top: 0;
   left: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 120px 25px 65px 25px;
-  min-height: calc(100% - 185px);
   overflow: hidden;
+  color: #FFF;
 
-  @media only screen and (min-width: 768px) {
-    min-height: calc(100% - 150px);
-    width: calc(100% - 50px);
-    padding: 75px 25px 75px 25px;
+  @media only screen and (min-width: 767px) {
+    width: 100%;
+  }
+
+  @media only screen and (max-height: 850px) {
+    padding: 50px 0;
   }
 }
 
@@ -57,7 +59,7 @@
 }
 
 .triangle-top {
-  @media only screen and (min-width: 1440px) {
+  @media only screen and (min-width: 1024px) {
     background-color: #9DC2FF;
     width: 500px;
     height: 650px;
@@ -70,17 +72,19 @@
 }
 
 .triangle-left {
-  display: none;
+  display: initial;
   background-color: #F6C5A8;
-  width: 350px;
-  height: 350px;
+  width: 150px;
+  height: 200px;
   position: absolute;
   transform: rotate(35deg);
   z-index: -1;
-  left: -200px;
-  top: 200px;
-  @media only screen and (min-width: 768px) {
-    display: initial;
+  left: -80px;
+  top: 150px;
+  @media only screen and (min-width: 1024px) {
+    left: -80px;
+    top: initial;
+    bottom: 150px;
   }
   @media only screen and (min-width: 1440px) {
     width: 580px;
@@ -113,6 +117,10 @@
 }
 
 .about-info {
+  width: 85%;
+  @media only screen and (min-width: 1024px) {
+    width: initial;
+  }
   @media only screen and (min-width: 1440px) {
     font-size: 20px;
     max-width: 50%;
@@ -124,46 +132,5 @@
   flex-direction: row;
   > ul:first-of-type {
     padding-left: 20px;
-  }
-}
-
-.hexagon-left {
-  position: absolute;
-  width: 300px;
-  left: -150px;
-  bottom: 200px;
-  height: 180px;
-  background-color: #F6C5A8;
-  margin: 86.60px 0;
-  z-index: -1;
-  @media only screen and (min-width: 768px) {
-    display: none;
-  }
-}
-.hexagon-left:before,
-.hexagon-left:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  @media only screen and (min-width: 768px) {
-    border-left: 225px solid transparent;
-    border-right: 225px solid transparent;
-  }
-}
-.hexagon-left:before {
-  bottom: 100%;
-  border-bottom: 86.60px solid #F6C5A8;
-  @media only screen and (min-width: 768px) {
-    border-bottom: 129.90px solid #F6C5A8;
-  }
-}
-.hexagon-left:after {
-  top: 100%;
-  width: 0;
-  border-top: 86.60px solid #F6C5A8;
-  @media only screen and (min-width: 768px) {
-    border-bottom: 129.90px solid #F6C5A8;
   }
 }
