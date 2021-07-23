@@ -81,6 +81,9 @@ query {
   .main-layout {
     overflow: hidden;
   }
+  header {
+    z-index: 1000;
+  }
 </style>
 <style lang="scss" scoped>
   @import '../pages/styles/main';
