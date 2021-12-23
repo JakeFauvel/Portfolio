@@ -1,7 +1,6 @@
 <template>
   <Layout class="contact-layout">
     <div class="contact-container">
-      <div class="triangle-top"></div>
       <div class="text-container">
         <div class="gif-container">
           <img class="chat-gif" src="../assets/chat.gif" alt="Chat GIF">

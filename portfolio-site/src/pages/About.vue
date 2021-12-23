@@ -2,11 +2,6 @@
 <template>
   <Layout class="about-layout">
     <div class="about-container">
-      <div class="triangle-top"></div>
-      <div class="circle-top-right"></div>
-      <div class="hexagon-left"></div>
-      <div class="triangle-left"></div>
-
       <img class="jf-image" src="../assets/jf.jpg" alt="Jake Fauvel">
       <h1 class="about-title">Hey, I'm Jake.</h1>
       <div class="about-info">
@@ -35,11 +30,8 @@
         </div>
 
         <p>However, my previous role at <a href="https://tillo.io" target="_blank" style="color: #5854E5;">Tillo</a> required me to dabble in many other tools and technologies.</p>
-
         <p>Want to know more or see a full list of my skills? <a href="" style="color: #FFF; cursor: pointer;">Take a look at my CV</a> or my <a href="" style="color: #FFF; cursor: pointer;">personal projects.</a></p>
-
       </div>
-      <div class="triangle-bottom-right"></div>
     </div>
   </Layout>
 </template>

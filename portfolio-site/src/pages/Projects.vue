@@ -1,8 +1,6 @@
 <template>
   <Layout class="projects-layout">
-    <div class="about-container">
-      <div class="triangle-top"></div>
-    </div>
+    <div class="about-container"></div>
   </Layout>
 </template>
 <script>

@@ -1,16 +1,3 @@
 .projects-layout {
   overflow: auto;
 }
-
-.triangle-top {
-  @media only screen and (min-width: 1024px) {
-    background-color: #ffe79d;
-    width: 600px;
-    height: 650px;
-    position: absolute;
-    transform: rotate(10deg);
-    z-index: -1;
-    left: 0;
-    top: -475px;
-  }
-}

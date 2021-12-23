@@ -149,7 +149,7 @@
         transform-origin: center;
 
         @media only screen and (min-width: 1024px) {
-          background: #212227;
+          background: #FFFFFF;
         }
 
         @media only screen and (min-width: 1280px) {
@@ -171,7 +171,7 @@
         color: #FFF;
 
         @media only screen and (min-width: 1024px) {
-          color: #212227;
+          color: #FFFFFF;
         }
 
         @media only screen and (min-width: 1280px) {
