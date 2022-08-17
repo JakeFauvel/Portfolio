@@ -81,13 +81,11 @@ query {
   .main-layout {
     overflow: hidden;
   }
-
   @media only screen and (min-width: 1280px) {
     header {
       z-index: 1000;
     }
   }
-
   nav {
     z-index: 1000;
   }

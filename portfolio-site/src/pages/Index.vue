@@ -6,9 +6,7 @@
         <span class="second-letter">Fauvel</span>
       </div>
 
-      <div class="home-title">
-        <span>Lead Developer</span>
-      </div>
+      <div class="home-title typewrite"></div>
     </div>
   </Layout>
 </template>
@@ -17,6 +15,74 @@
 export default {
   metaInfo: {
     title: 'Jake Fauvel - Lead Developer BRICOFLOR - Düsseldorf, Germany'
+  },
+  data() {
+    return {
+      stringToType: '[ "Lead developer", "Coder 💻", "Planner 📝", "Problem solver 😅", "Tech guy 🤓" ]'
+    }
+  },
+  mounted() {
+    this.typewriterEffect();
+  },
+  methods: {
+    // Reference
+    // https://codepen.io/hi-im-si/pen/ALgzqo
+    typewriterEffect() {
+      let TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtType.prototype.tick = function() {
+        let i = this.loopNum % this.toRotate.length;
+        let fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span height="40px" class="wrap">'+this.txt+'</span>';
+
+        let that = this;
+        let delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function() {
+          that.tick();
+        }, delta);
+      };
+
+      let elements = document.getElementsByClassName('typewrite');
+      for (let i = 0; i < elements.length; i++) {
+        let toRotate = this.stringToType;
+        let period = this.stringToType;
+        if (toRotate) {
+          new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // INJECT CSS
+      let css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+      document.body.appendChild(css);
+    }
   }
 }
 </script>
