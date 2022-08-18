@@ -1,3 +1,79 @@
 .projects-layout {
   overflow: auto;
 }
+
+.projects-container {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  color: #FFF;
+  padding-bottom: 5%;
+
+  @media only screen and (max-height: 850px) {
+    padding: 100px 0;
+  }
+
+  @media only screen and (max-width: 450px), only screen and (max-height: 850px) {
+    padding: 100px 0;
+  }
+
+  .project {
+    flex-direction: column;
+    display: flex;
+    width: 85%;
+    margin-top: 35px;
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 85%;
+      }
+      @media only screen and (min-width: 768px) {
+        width: 50%;
+      }
+    }
+    .text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h2 {
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+      p {
+        margin-top: 10px;
+      }
+      @media only screen and (min-width: 768px) {
+        width: 50%;
+      }
+      &.extra-padding-right {
+        margin-right: 35px;
+      }
+    }
+  }
+  .project.image-right {
+    flex-direction: column-reverse;
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+}

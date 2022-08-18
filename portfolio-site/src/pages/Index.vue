@@ -14,11 +14,11 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - Lead Developer BRICOFLOR - Düsseldorf, Germany'
+    title: 'Jake Fauvel - Contact Me | Düsseldorf, Software Engineer / Developer'
   },
   data() {
     return {
-      stringToType: '[ "Lead developer", "Coder 💻", "Planner 📝", "Problem solver 😅", "Tech guy 🤓" ]'
+      stringToType: '[ "Current role...", "Lead Developer / Head of Web Development", "I am a...", "Coder 💻", "Planner 📝", "Problem solver 😅", "General tech guy 🤓" ]'
     }
   },
   mounted() {
