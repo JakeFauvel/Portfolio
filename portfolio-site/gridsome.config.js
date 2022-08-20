@@ -9,6 +9,14 @@ module.exports = {
   siteUrl: 'https://www.jakefauvel.com/',
   plugins: [
     {
+      use: 'gridsome-plugin-robots',
+      options: {
+        host: 'https://www.jakefauvel.com/',
+        sitemap: 'https://www.jakefauvel.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
+    {
       use: '@gridsome/plugin-sitemap',
       options: {
         cacheTime: 600000,
