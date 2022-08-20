@@ -12,117 +12,119 @@
     </div>
 </template>
 <script>
-    let Velocity = require('velocity-animate');
+if (process.isClient) {
+  let Velocity = require('velocity-animate');
+}
 
-    module.exports = {
-        data: function () {
-            return {
-                hamburgerOpen: false,
-                isAnimating: false,
-                navItems: {
-                    0: {
-                        label: 'Home',
-                        route: '/'
-                    },
-                    1: {
-                        label: 'About',
-                        route: '/about'
-                    },
-                    2: {
-                        label: 'Projects',
-                        route: '/projects'
-                    },
-                    3: {
-                        label: 'Contact',
-                        route: '/contact'
-                    },
-                }
-            }
-        },
-
-        computed: {
-          menuText() {
-            return this.hamburgerOpen ? 'CLOSE' : 'MENU';
-          },
-        },
-
-        methods: {
-            hamburgerClick() {
-                let lineOne = this.$refs.lineOne;
-                let lineTwo = this.$refs.lineTwo;
-                let menu = this.$refs.menu;
-                let menuOverflow = this.$refs['menu-overflow'];
-
-                if (!this.hamburgerOpen) {
-                    this.openHamburger(lineOne, lineTwo, menu, menuOverflow);
-                } else {
-                    this.closeHamburger(lineOne, lineTwo, menu, menuOverflow);
-                }
-            },
-
-            openHamburger(lineOne, lineTwo, menu, menuOverflow) {
-                if (this.isAnimating) return;
-                this.isAnimating = true;
-
-                // Set hamburger state / emit event
-                this.hamburgerOpen = !this.hamburgerOpen;
-                this.$emit('hamburgerClick', this.hamburgerOpen);
-
-                // Animate the first line
-                Velocity(lineOne, {translateY: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
-                    Velocity(lineOne, {rotateZ: 45}, {duration: 200,  easing: 'easeOutElastic'});
-                }});
-                // Display the menu / overflow
-                menu.style.display = 'flex';
-                menuOverflow.style.display = 'flex';
-                // Animate the menu / overflow opacity
-                Velocity(menu, {opacity: 1}, {duration: 250});
-                Velocity(menuOverflow, {opacity: 0.5}, {duration: 250});
-                // Animate third line
-                Velocity(lineTwo, {translateY: -15}, {duration: 200, easing: 'easeOutElastic', complete: function() {
-                    Velocity(lineTwo, {rotateZ: -45}, {duration: 200, easing: 'easeOutElastic'});
-                }});
-
-                this.resetIsAnimatingState();
-            },
-
-            closeHamburger(lineOne, lineTwo, menu, menuOverflow) {
-                if (this.isAnimating) return;
-                this.isAnimating = true;
-
-                // Set hamburger state/emit event
-                this.hamburgerOpen = !this.hamburgerOpen;
-                this.$emit('hamburgerClick', this.hamburgerOpen);
-
-                // Animate the first line
-                Velocity(lineOne, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
-                    Velocity(lineOne, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
-                }});
-                // Show the second line
-                lineTwo.style.display = 'block';
-                // Animate opacity / hide menu
-                Velocity(menu, {opacity: 0}, {duration: 100, complete: function() {
-                    menu.style.display = 'none';
-                }});
-                // Animate opacity / hide menuOverflow
-                Velocity(menuOverflow, {opacity: 0}, {duration: 100, complete: function() {
-                    menuOverflow.style.display = 'none';
-                }});
-                // Animate the third line
-                Velocity(lineTwo, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
-                    Velocity(lineTwo, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
-                }});
-
-                this.resetIsAnimatingState();
-            },
-
-            resetIsAnimatingState() {
-                setTimeout(function() {
-                    this.isAnimating = false;
-                }.bind(this), 500);
+module.exports = {
+    data: function () {
+        return {
+            hamburgerOpen: false,
+            isAnimating: false,
+            navItems: {
+                0: {
+                    label: 'Home',
+                    route: '/'
+                },
+                1: {
+                    label: 'About',
+                    route: '/about'
+                },
+                2: {
+                    label: 'Projects',
+                    route: '/projects'
+                },
+                3: {
+                    label: 'Contact',
+                    route: '/contact'
+                },
             }
         }
+    },
+
+    computed: {
+      menuText() {
+        return this.hamburgerOpen ? 'CLOSE' : 'MENU';
+      },
+    },
+
+    methods: {
+        hamburgerClick() {
+            let lineOne = this.$refs.lineOne;
+            let lineTwo = this.$refs.lineTwo;
+            let menu = this.$refs.menu;
+            let menuOverflow = this.$refs['menu-overflow'];
+
+            if (!this.hamburgerOpen) {
+                this.openHamburger(lineOne, lineTwo, menu, menuOverflow);
+            } else {
+                this.closeHamburger(lineOne, lineTwo, menu, menuOverflow);
+            }
+        },
+
+        openHamburger(lineOne, lineTwo, menu, menuOverflow) {
+            if (this.isAnimating) return;
+            this.isAnimating = true;
+
+            // Set hamburger state / emit event
+            this.hamburgerOpen = !this.hamburgerOpen;
+            this.$emit('hamburgerClick', this.hamburgerOpen);
+
+            // Animate the first line
+            Velocity(lineOne, {translateY: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                Velocity(lineOne, {rotateZ: 45}, {duration: 200,  easing: 'easeOutElastic'});
+            }});
+            // Display the menu / overflow
+            menu.style.display = 'flex';
+            menuOverflow.style.display = 'flex';
+            // Animate the menu / overflow opacity
+            Velocity(menu, {opacity: 1}, {duration: 250});
+            Velocity(menuOverflow, {opacity: 0.5}, {duration: 250});
+            // Animate third line
+            Velocity(lineTwo, {translateY: -15}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                Velocity(lineTwo, {rotateZ: -45}, {duration: 200, easing: 'easeOutElastic'});
+            }});
+
+            this.resetIsAnimatingState();
+        },
+
+        closeHamburger(lineOne, lineTwo, menu, menuOverflow) {
+            if (this.isAnimating) return;
+            this.isAnimating = true;
+
+            // Set hamburger state/emit event
+            this.hamburgerOpen = !this.hamburgerOpen;
+            this.$emit('hamburgerClick', this.hamburgerOpen);
+
+            // Animate the first line
+            Velocity(lineOne, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                Velocity(lineOne, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
+            }});
+            // Show the second line
+            lineTwo.style.display = 'block';
+            // Animate opacity / hide menu
+            Velocity(menu, {opacity: 0}, {duration: 100, complete: function() {
+                menu.style.display = 'none';
+            }});
+            // Animate opacity / hide menuOverflow
+            Velocity(menuOverflow, {opacity: 0}, {duration: 100, complete: function() {
+                menuOverflow.style.display = 'none';
+            }});
+            // Animate the third line
+            Velocity(lineTwo, {rotateZ: 0}, {duration: 200, easing: 'easeOutElastic', complete: function() {
+                Velocity(lineTwo, {translateY: 0}, {duration: 200, easing: 'easeOutElastic'});
+            }});
+
+            this.resetIsAnimatingState();
+        },
+
+        resetIsAnimatingState() {
+            setTimeout(function() {
+                this.isAnimating = false;
+            }.bind(this), 500);
+        }
     }
+}
 </script>
 <style scoped lang="scss">
     .menu-container {

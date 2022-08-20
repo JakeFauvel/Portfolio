@@ -8,12 +8,14 @@
   },
   "dependencies": {
     "@babel/core": "^7.12.13",
+    "@gridsome/plugin-sitemap": "^0.4.0",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.0",
     "sharp": "^0.30.7",
-    "velocity-animate": "^1.5.2"
+    "velocity-animate": "^1.5.2",
+    "vue-server-renderer": "^2.6.11"
   }
 }

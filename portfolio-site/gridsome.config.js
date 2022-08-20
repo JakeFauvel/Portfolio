@@ -6,5 +6,19 @@
 
 module.exports = {
   siteName: 'Jake Fauvel - Portfolio Site',
-  plugins: []
+  siteUrl: 'https://www.jakefauvel.com/',
+  plugins: [
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000,
+        config: {
+          '/*': {
+            changefreq: 'monthly',
+            priority: 0.5
+          }
+        }
+      }
+    }
+  ]
 };
