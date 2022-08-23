@@ -27,15 +27,6 @@ module.exports = {
           }
         }
       }
-    },
-    {
-      use: 'gridsome-plugin-gtm',
-      options: {
-        id: 'GTM-WWG59FP',
-        enabled: true,
-        debug: true,
-        vueRouter: router
-      }
     }
   ]
 };
