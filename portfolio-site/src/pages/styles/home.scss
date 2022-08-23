@@ -12,22 +12,32 @@
 }
 
 .home-initials {
-  width: 80%;
   font-size: 65px;
   font-weight: 600;
   text-align: center;
   word-wrap: break-word;
   margin-bottom: 10px;
 
-  .first-letter {
-    color: #FFA5A5;
+  // Reference Jammie Hammond
+  // https://codepen.io/developerontour/pen/QWjMNLe
+  h1 {
     display: block;
-    line-height: 50px;
-  }
-  .second-letter {
-    color: #FFE79D;
-    display: block;
-    line-height: 50px;
+    font-size: 10vw;
+    text-shadow: 4px 4px 0 #FFF;
+    mix-blend-mode: screen;
+    animation-delay: 2s;
+    animation: fadeIn 2.5s ease-in forwards;
+    margin: 0;
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
   }
 
   @media only screen and (min-width: 375px) {

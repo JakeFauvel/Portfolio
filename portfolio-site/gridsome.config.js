@@ -29,9 +29,12 @@ module.exports = {
       }
     },
     {
-      use: '@gridsome/plugin-google-analytics',
+      use: 'gridsome-plugin-gtm',
       options: {
-        id: 'UA-99359867-2'
+        id: 'GTM-WWG59FP',
+        enabled: true,
+        debug: true,
+        vueRouter: router
       }
     }
   ]

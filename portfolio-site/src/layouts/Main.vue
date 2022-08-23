@@ -9,7 +9,11 @@
         <g-link class="nav__link" to="/contact/">Contact</g-link>
       </nav>
     </header>
-    <slot></slot>
+    <transition name="fade" appear>
+      <main>
+        <slot></slot>
+      </main>
+    </transition>
   </div>
 </template>
 

@@ -37,6 +37,13 @@
   color: #FFFFFF;
   font-size: 25px;
   text-decoration: none;
+  transition: all 0.3s ease-out;
+  padding: 5px 7px 5px 7px;
+  &:hover {
+    transition: all 0.3s ease-in;
+    background: #FFF;
+    color: #212121;
+  }
   @media only screen and (max-width: 1279px) {
     display: none;
   }
@@ -44,4 +51,15 @@
 
 .active--exact {
   border-bottom: 4px solid #212121;
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+  background: #FFF;
+  color: #212121;
+}
+
+.fade-enter-active {
+  transition: opacity .5s;
+}
+.fade-enter {
+  opacity: 0;
 }

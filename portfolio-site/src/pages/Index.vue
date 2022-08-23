@@ -2,8 +2,7 @@
   <Layout class="page-layout">
     <div class="home-container">
       <div class="home-initials">
-        <span class="first-letter">Jake</span>
-        <span class="second-letter">Fauvel</span>
+        <h1 class="home-initials">Jake Fauvel</h1>
       </div>
 
       <div class="home-title typewrite"></div>

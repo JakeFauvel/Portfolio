@@ -18,16 +18,16 @@
           <div class="right">
             <h2>Social</h2>
             <div class="social-icons">
-              <a href="https://github.com/JakeFauvel" target="_blank">
+              <a @click="socialMediaClick('Github')" href="https://github.com/JakeFauvel" target="_blank">
                 <img class="github" src="../assets/github.svg" alt="GitHub Icon">
               </a>
-              <a href="https://www.linkedin.com/in/jake-fauvel/" target="_blank">
+              <a @click="socialMediaClick('LinkedIn')" href="https://www.linkedin.com/in/jake-fauvel/" target="_blank">
                 <img class="linked-in" src="../assets/linkedin.svg" alt="LinkedIn Icon">
               </a>
-              <a href="https://www.instagram.com/jake_fauvel/" target="_blank">
+              <a @click="socialMediaClick('Instagram')" href="https://www.instagram.com/jake_fauvel/" target="_blank">
                 <img class="instagram" src="../assets/instagram.svg" alt="Instagram Icon">
               </a>
-              <a href="https://www.youtube.com/channel/UCr-nTZOycVIm4CXF2U1PUbw" target="_blank">
+              <a @click="socialMediaClick('YouTube')" href="https://www.youtube.com/channel/UCr-nTZOycVIm4CXF2U1PUbw" target="_blank">
                 <img class="youtube" src="../assets/youtube.svg" alt="YouTube Icon">
               </a>
             </div>
@@ -42,6 +42,13 @@
 export default {
   metaInfo: {
     title: 'Jake Fauvel - Contact Me | Düsseldorf, Software Engineer / Developer'
+  },
+  methods: {
+    socialMediaClick(type) {
+      this.$gtm.trackEvent({
+        event: 'social-' + type.toLowerCase(),
+      });
+    }
   }
 }
 </script>

@@ -36,7 +36,7 @@
 
         My previous roles include: <a href="https://community.musictribe.com/" target="_blank" style="background: #DA0402; color: #FFF;">Music Tribe</a> in Willich, Germany. Creating hybrid mobile applications for their mixing consoles.
 
-        <p>Before that, I was working at <a href="https://tillo.io" target="_blank" style="background: #5854E5; color: #FFF;">Tillo</a> in Brighton & Hove, United Kingdom. The main part of my role was developing new features for their Sass web application / API <service class=""></service></p>
+        <p>Before that, I was working at <a href="https://tillo.io" target="_blank" style="background: #5854E5; color: #FFF;">Tillo</a> in Brighton & Hove, United Kingdom. The main part of my role was developing new features for their Sass web application / API service.</p>
         <p>Want to know more or see a full list of my skills? <a href="" style="color: #FFF; cursor: pointer;">Take a look at my CV (coming soon)</a> or my <a href="/projects" style="color: #FFF; cursor: pointer;">personal projects.</a></p>
       </div>
     </div>
