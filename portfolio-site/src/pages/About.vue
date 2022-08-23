@@ -46,7 +46,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - About Me | Düsseldorf, Software Engineer / Developer'
+    title: 'Jake Fauvel - About Me | Lead Developer | Software Engineer | Full Stack Developer | Düsseldorf, Germany'
   }
 }
 </script>
