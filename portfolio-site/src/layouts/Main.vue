@@ -55,6 +55,7 @@ query {
 }
 </static-query>
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600,800&display=swap');
   html {
     width: 100%;
     height: 100%;
