@@ -3,7 +3,8 @@
     <div class="projects-container">
         <div class="project">
           <div class="image">
-            <img src="../assets/projects/Christoph_Screens.png" alt="Portfolio project screenshots">
+            <img v-if="!supportsWebP" src="../assets/projects/Christoph_Screens.png" alt="Portfolio project screenshots">
+            <img v-if="supportsWebP" src="../assets/projects/Christoph_Screens.webp" alt="Portfolio project screenshots">
           </div>
 
           <div class="text">
@@ -19,13 +20,15 @@
         </div>
 
         <div class="image">
-          <img src="../assets/projects/VinylHub_Screens.png" alt="Vinyl Hub web app screenshots">
+          <img v-if="!supportsWebP" src="../assets/projects/VinylHub_Screens.png" alt="Vinyl Hub web app screenshots">
+          <img v-if="supportsWebP" src="../assets/projects/VinylHub_Screens.webp" alt="Vinyl Hub web app screenshots">
         </div>
       </div>
 
       <div class="project">
         <div class="image">
-          <img src="../assets/projects/Fish_Frenzy_Screen.png" alt="Fish Frenzy JavaScript screenshot">
+          <img v-if="!supportsWebP" src="../assets/projects/Fish_Frenzy_Screen.png" alt="Fish Frenzy JavaScript screenshot">
+          <img v-if="supportsWebP" src="../assets/projects/Fish_Frenzy_Screen.webp" alt="Fish Frenzy JavaScript screenshot">
         </div>
 
         <div class="text">
@@ -51,6 +54,35 @@
 export default {
   metaInfo: {
     title: 'Jake Fauvel - Lead Developer | Software Engineer | Full Stack Developer | Düsseldorf, Germany'
+  },
+  data() {
+    return {
+      supportsWebP: false
+    }
+  },
+  mounted() {
+    this.checkForWebP('lossy', (feature, result) => {
+      this.supportsWebP = result
+    });
+  },
+  methods: {
+    checkForWebP (feature, callback) {
+      let kTestImages = {
+        lossy: 'UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA',
+        lossless: 'UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==',
+        alpha: 'UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==',
+        animation: 'UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA'
+      };
+      let img = new Image();
+      img.onload = function () {
+        let result = (img.width > 0) && (img.height > 0);
+        callback(feature, result);
+      };
+      img.onerror = function () {
+        callback(feature, false);
+      };
+      img.src = 'data:image/webp;base64,' + kTestImages[feature];
+    }
   }
 }
 </script>

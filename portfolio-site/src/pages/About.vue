@@ -2,7 +2,8 @@
 <template>
   <Layout class="about-layout">
     <div class="about-container">
-      <img class="jf-image" src="../assets/jf.jpg" alt="Jake Fauvel">
+      <img v-if="!supportsWebP" class="jf-image" src="../assets/jf.jpg" alt="Jake Fauvel">
+      <img v-if="supportsWebP" class="jf-image" src="../assets/jf.webp" alt="Jake Fauvel">
       <h1 class="about-title">Hey, I'm Jake.</h1>
       <div class="about-info">
         <p>I am a University of Brighton graduate with a degree in Digital Media Development (BSc), I achieved first class honours.</p>
@@ -47,6 +48,35 @@
 export default {
   metaInfo: {
     title: 'Jake Fauvel - About Me | Lead Developer | Software Engineer | Full Stack Developer | Düsseldorf, Germany'
+  },
+  data() {
+    return {
+      supportsWebP: false
+    }
+  },
+  mounted() {
+    this.checkForWebP('lossy', (feature, result) => {
+      this.supportsWebP = result
+    });
+  },
+  methods: {
+    checkForWebP (feature, callback) {
+      let kTestImages = {
+        lossy: 'UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA',
+        lossless: 'UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==',
+        alpha: 'UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==',
+        animation: 'UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA'
+      };
+      let img = new Image();
+      img.onload = function () {
+        let result = (img.width > 0) && (img.height > 0);
+        callback(feature, result);
+      };
+      img.onerror = function () {
+        callback(feature, false);
+      };
+      img.src = 'data:image/webp;base64,' + kTestImages[feature];
+    }
   }
 }
 </script>
