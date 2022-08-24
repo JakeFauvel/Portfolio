@@ -197,6 +197,7 @@ query {
   #cm {
     background: #212227 !important;
     color: #FFF !important;
+    border: 1px solid #FFF;
   }
   #cm #c-inr #c-bns button {
     background: #FFF !important;

@@ -7,6 +7,10 @@
 module.exports = {
   siteName: 'Jake Fauvel',
   siteUrl: 'https://www.jakefauvel.com/',
+  icon: {
+    favicon: './src/my-favicon.png',
+    sizes: [16, 32]
+  },
   plugins: [
     {
       use: 'gridsome-plugin-robots',
