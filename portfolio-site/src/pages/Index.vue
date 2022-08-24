@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      stringToType: '[ "Current role...", "Lead Developer / Head of Web Development", "I am a...", "Coder 💻", "Planner 📝", "Problem solver 😅", "General tech guy 🤓" ]'
+      stringToType: '[ "Current role...", "Lead Developer / Head of Web Development @ BRICOFLOR GmbH", "I am a...", "Coder 💻", "Planner 📝", "Problem solver 😅", "General tech guy 🤓" ]'
     }
   },
   mounted() {
