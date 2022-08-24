@@ -32,10 +32,6 @@ export default {
 
   data () {
     return {
-      isHomeActive: false,
-      isAboutActive: false,
-      isProjectsActive: false,
-      isContactActive: false,
       hamburgerClicked: false
     }
   },

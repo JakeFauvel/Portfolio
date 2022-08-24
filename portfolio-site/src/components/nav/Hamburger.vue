@@ -6,7 +6,7 @@
             <div ref="menuText" class="menu-text" :class="{open: hamburgerOpen}">{{ menuText }}</div>
         </div>
         <div ref="menu" class="menu" :class="{closed: !hamburgerOpen}">
-            <a v-for="navItem in navItems" :href="navItem.route" class="nav-item">{{ navItem.label }}</a>
+          <g-link v-for="(navItem, index) in navItems" :key="index" :to="navItem.route" class="nav__link">{{ navItem.label }}</g-link>
         </div>
         <div ref="menu-overflow" v-on:click="hamburgerClick" :class="{closed: !hamburgerOpen}" class="menu-overflow"></div>
     </div>
@@ -152,10 +152,7 @@ module.exports = {
 
         @media only screen and (min-width: 1024px) {
           background: #FFFFFF;
-        }
-
-        @media only screen and (min-width: 1280px) {
-            display: none !important;
+          display: none !important;
         }
     }
     .line-one.open, .line-two.open {
@@ -176,7 +173,7 @@ module.exports = {
           color: #FFFFFF;
         }
 
-        @media only screen and (min-width: 1280px) {
+        @media only screen and (min-width: 1024px) {
             display: none;
         }
     }
@@ -203,7 +200,7 @@ module.exports = {
                 font-size: 52px;
             }
         }
-        @media only screen and (min-width: 1280px) {
+        @media only screen and (min-width: 1024px) {
             display: none !important;
         }
     }
@@ -224,7 +221,7 @@ module.exports = {
         z-index: 1;
         width: 30%;
         height: 100vh;
-        @media only screen and (min-width: 1280px) {
+        @media only screen and (min-width: 1024px) {
             display: none !important;
         }
     }

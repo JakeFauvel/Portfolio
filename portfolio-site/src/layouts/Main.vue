@@ -23,17 +23,11 @@
     components: {
       Hamburger
     },
-
     data () {
       return {
-        isHomeActive: false,
-        isAboutActive: false,
-        isProjectsActive: false,
-        isContactActive: false,
         hamburgerClicked: false
       }
     },
-
     methods: {
       onHamburgerClick() {
         this.hamburgerClicked = !this.hamburgerClicked;
@@ -85,7 +79,7 @@ query {
   .main-layout {
     overflow: hidden;
   }
-  @media only screen and (min-width: 1280px) {
+  @media only screen and (min-width: 1024px) {
     header {
       z-index: 1000;
     }
