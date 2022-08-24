@@ -41,11 +41,11 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - Contact Me | Lead Developer | Düsseldorf, Germany',
+    title: 'Contact Me | Lead Developer | Düsseldorf, DE',
     meta: [{
       vmid: 'description',
       name: 'description',
-      content: 'Contact Jake Fauvel page, these are the methods in which you can contact me regarding development opportunities / requests for collaborations.'
+      content: 'Contact me, these are the methods in which you can contact me regarding development opportunities / requests for collaborations.'
     }],
   },
   methods: {

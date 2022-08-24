@@ -53,7 +53,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - Projects | Lead Developer | Düsseldorf, Germany',
+    title: 'Projects | Lead Developer | Düsseldorf, DE',
     meta: [{
       vmid: 'description',
       name: 'description',

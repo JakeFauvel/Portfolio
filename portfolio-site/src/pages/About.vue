@@ -47,11 +47,11 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - About Me | Lead Developer | Düsseldorf, Germany',
+    title: 'About Me | Lead Developer | Düsseldorf, DE',
     meta: [{
       vmid: 'description',
       name: 'description',
-      content: 'About Jake Fauvel page, this is a rough overview of my acedemic and professional experience. My previous jobs and university qualifiations are listed here.'
+      content: 'About me, overview of my acedemic and professional experience. My previous jobs and university qualifiations are listed here.'
     }],
   },
   data() {
