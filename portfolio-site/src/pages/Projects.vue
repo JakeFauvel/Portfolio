@@ -1,6 +1,8 @@
 <template>
   <Layout class="projects-layout">
     <div class="projects-container">
+        <h1 class="projects-title">Here are some projects I have worked on</h1>
+
         <div class="project">
           <div class="image">
             <img v-if="!supportsWebP" src="../assets/projects/Christoph_Screens.png" alt="Portfolio project screenshots">
@@ -53,11 +55,11 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Projects | Lead Developer | Düsseldorf, DE',
+    title: 'Projects | PHP, JavaScript, Vue.js | Düsseldorf, DE',
     meta: [{
       vmid: 'description',
       name: 'description',
-      content: 'A small selection of my projects. Some of these are university projects, some are professional projects I have taken in my free time. Each has a brief description of the project and the tools, languages + frameworks used.'
+      content: 'A small selection of projects. Each gives a description of the project, tools, languages and frameworks used.'
     }],
   },
   data() {

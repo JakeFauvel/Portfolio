@@ -4,7 +4,7 @@
     <div class="about-container">
       <img v-if="!supportsWebP" class="jf-image" src="../assets/jf.jpg" alt="Jake Fauvel">
       <img v-if="supportsWebP" class="jf-image" src="../assets/jf.webp" alt="Jake Fauvel">
-      <h1 class="about-title">Hey, I'm Jake.</h1>
+      <h1 class="about-title">Hey, I'm Jake. A Full-Stack Web Developer based in Düsseldorf, Germany.</h1>
       <div class="about-info">
         <p>I am a University of Brighton graduate with a degree in Digital Media Development (BSc), I achieved first class honours.</p>
         <p>My current role is the Lead Developer / Head of Web Development at <a href="https://www.bricoflor.de/" target="_blank" style="background: #6F1A35; color: #FFF;">BRICOFLOR GmbH</a>, based in Wuppertal Germany. I am responsible for all of the companies technical aspects, from internal tools to the companies production ecommerce websites. We have websites in all of the major European countries.</p>
@@ -35,10 +35,10 @@
           </ul>
         </div>
 
-        My previous roles include: <a href="https://community.musictribe.com/" target="_blank" style="background: #DA0402; color: #FFF;">Music Tribe</a> in Willich, Germany. Creating hybrid mobile applications for their mixing consoles.
+        <br>My previous roles include: <a href="https://community.musictribe.com/" target="_blank" style="background: #DA0402; color: #FFF;">Music Tribe</a> in Willich, Germany. Creating hybrid mobile applications for their mixing consoles.
 
         <p>Before that, I was working at <a href="https://tillo.io" target="_blank" style="background: #5854E5; color: #FFF;">Tillo</a> in Brighton & Hove, United Kingdom. The main part of my role was developing new features for their Sass web application / API service.</p>
-        <p>Want to know more or see a full list of my skills? <a href="" style="color: #FFF; cursor: pointer;">Take a look at my CV (coming soon)</a> or my <a href="/projects" style="color: #FFF; cursor: pointer;">personal projects.</a></p>
+        <p>Want to know more or see a full list of my skills? <a href="" style="color: #FFF; cursor: pointer;">Take a look at my CV (coming soon)</a> or my <a href="/projects" style="color: #FFF; cursor: pointer;">personal projects.</a> Alternatively, <a href="/contact" style="color: #FFF; cursor: pointer;">contact me!</a></p>
       </div>
     </div>
   </Layout>

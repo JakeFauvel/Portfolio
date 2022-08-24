@@ -188,7 +188,7 @@ module.exports = {
         height: 100vh;
         background: #212227;
 
-        .nav-item {
+        .nav__link {
             text-decoration: none;
             font-family: 'Raleway', sans-serif;
             font-weight: 600;
@@ -199,6 +199,9 @@ module.exports = {
             @media only screen and (min-width: 768px) {
                 font-size: 52px;
             }
+        }
+        .nav__link.active--exact {
+          text-decoration: underline;
         }
         @media only screen and (min-width: 1024px) {
             display: none !important;
