@@ -53,7 +53,12 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - Lead Developer | Software Engineer | Full Stack Developer | Düsseldorf, Germany'
+    title: 'Jake Fauvel - Projects | Lead Developer | Düsseldorf, Germany',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'A small selection of my projects. Some of these are university projects, some are professional projects I have taken in my free time. Each has a brief description of the project and the tools, languages + frameworks used.'
+    }],
   },
   data() {
     return {

@@ -41,7 +41,12 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - Lead Developer | Software Engineer | Full Stack Developer | Düsseldorf, Germany'
+    title: 'Jake Fauvel - Contact Me | Lead Developer | Düsseldorf, Germany',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'Contact Jake Fauvel page, these are the methods in which you can contact me regarding development opportunities / requests for collaborations.'
+    }],
   },
   methods: {
     socialMediaClick(type) {

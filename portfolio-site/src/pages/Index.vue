@@ -12,7 +12,12 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Jake Fauvel - Lead Developer | Software Engineer | Full Stack Developer | Düsseldorf, Germany'
+    title: 'Jake Fauvel - Homepage | Lead Developer | Düsseldorf, Germany',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'Jake Fauvel intro page / homepage. I am a Lead Developer based in Düsseldorf, Germany. I like the code and create things.'
+    }],
   },
   data() {
     return {

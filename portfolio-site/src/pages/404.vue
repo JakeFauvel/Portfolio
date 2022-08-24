@@ -19,7 +19,12 @@
 import Hamburger from '~/components/nav/Hamburger.vue'
 export default {
   metaInfo: {
-    title: '404 - Site not found!'
+    title: '404 - Site not found!',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'Page not found (404)'
+    }],
   },
   components: {
     Hamburger
