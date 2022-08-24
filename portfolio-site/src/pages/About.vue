@@ -51,7 +51,7 @@ export default {
     meta: [{
       vmid: 'description',
       name: 'description',
-      content: 'About me, overview of my acedemic and professional experience. My previous jobs and university qualifiations are listed here.'
+      content: 'About me, overview of my academic and professional experience. My previous jobs and university qualifiations are listed here.'
     }],
   },
   data() {
