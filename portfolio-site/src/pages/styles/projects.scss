@@ -40,6 +40,10 @@
       flex-direction: row;
     }
 
+    @media only screen and (min-width: 1280px) {
+      width: 65vw;
+    }
+
     h2 {
       margin-top: 0;
       margin-bottom: 0;
