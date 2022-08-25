@@ -37,8 +37,7 @@
         <br>My previous roles include: <a href="https://community.musictribe.com/" target="_blank" style="background: #DA0402; color: #FFF;">Music Tribe</a> in Willich, Germany. Creating hybrid mobile applications for their mixing consoles.
         <p>Before that, I was working at <a href="https://tillo.io" target="_blank" style="background: #5854E5; color: #FFF;">Tillo</a> in Brighton & Hove, United Kingdom. The main part of my role was developing new features for their Sass web application / API service.</p>
 
-        <br>
-        <h3>Want to know more or see a full list of my skills?</h3>
+        <h3 class="see-more-heading">Want to know or see more?</h3>
         <div class="call-to-actions">
           <a href="/JakeFauvel_CV_Public_EN.pdf" target="_blank" style="color: #FFF; cursor: pointer;">TAKE A LOOK AT MY CV</a>
           <a href="/projects" style="color: #FFF; cursor: pointer;">SEE SOME PROJECTS</a>
