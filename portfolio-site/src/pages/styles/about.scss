@@ -72,3 +72,37 @@
     padding-left: 20px;
   }
 }
+
+.call-to-actions {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  flex-flow: wrap;
+
+  a {
+    width: 100%;
+    font-weight: bold;
+    margin-top: 15px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #FFF;
+    color: #212121 !important;
+    padding: 10px 20px 10px 20px;
+    align-self: stretch;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid transparent;
+    @media only screen and (min-width: 768px) {
+      width: initial;
+      margin-right: 35px;
+    }
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background: #212121;
+      color: #FFF !important;
+      border: 1px solid #FFF;
+    }
+  }
+}

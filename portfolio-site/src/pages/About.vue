@@ -8,9 +8,8 @@
       <div class="about-info">
         <p>I am a University of Brighton graduate with a degree in Digital Media Development (BSc), I achieved first class honours.</p>
         <p>My current role is the Lead Developer / Head of Web Development at <a href="https://www.bricoflor.de/" target="_blank" style="background: #6F1A35; color: #FFF;">BRICOFLOR GmbH</a>, based in Wuppertal Germany. I am responsible for all of the companies technical aspects, from internal tools to the companies production ecommerce websites. We have websites in all of the major European countries.</p>
-        <p>A large part of my role is actively developing new features, creating workflows/requirements, documentation and leading a small team of developers.</p>
-        <p>I specialise in full-stack development and the following technologies:</p>
 
+        <p>I specialise in full-stack development and the following technologies:</p>
         <div class="list-block">
           <ul class="block-one">
             <li>VueStorefront (Version 1)</li>
@@ -36,9 +35,15 @@
         </div>
 
         <br>My previous roles include: <a href="https://community.musictribe.com/" target="_blank" style="background: #DA0402; color: #FFF;">Music Tribe</a> in Willich, Germany. Creating hybrid mobile applications for their mixing consoles.
-
         <p>Before that, I was working at <a href="https://tillo.io" target="_blank" style="background: #5854E5; color: #FFF;">Tillo</a> in Brighton & Hove, United Kingdom. The main part of my role was developing new features for their Sass web application / API service.</p>
-        <p>Want to know more or see a full list of my skills? <a href="" style="color: #FFF; cursor: pointer;">Take a look at my CV (coming soon)</a> or my <a href="/projects" style="color: #FFF; cursor: pointer;">personal projects.</a> Alternatively, <a href="/contact" style="color: #FFF; cursor: pointer;">contact me!</a></p>
+
+        <br>
+        <h3>Want to know more or see a full list of my skills?</h3>
+        <div class="call-to-actions">
+          <a href="/JakeFauvel_CV_Public_EN.pdf" target="_blank" style="color: #FFF; cursor: pointer;">TAKE A LOOK AT MY CV</a>
+          <a href="/projects" style="color: #FFF; cursor: pointer;">SEE SOME PROJECTS</a>
+          <a href="/contact" style="color: #FFF; cursor: pointer;">CONTACT ME!</a>
+        </div>
       </div>
     </div>
   </Layout>
