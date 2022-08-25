@@ -32,8 +32,6 @@
     mounted() {
       let ccCookieStatus = localStorage.getItem('cc_cookie');
       let ccAccepted = localStorage.getItem('cc_accepted');
-      console.log(ccCookieStatus)
-      console.log(ccAccepted)
       if (typeof window.initCookieConsent !== 'function' && ccCookieStatus === null && !ccAccepted) {
         const script = document.createElement('script');
         script.type = 'text/javascript';
@@ -97,7 +95,7 @@
             'en': {
               consent_modal: {
                 title: 'Just to let you know',
-                description: 'In order to see how many people have visited my site, I use Google Analytics. None of the data is personally identifiable but I just wanted to make you aware.',
+                description: 'In order to see how many people have visited my site, I use Google Analytics. None of the data is personally identifiable.',
                 primary_btn: {
                   text: 'Acknowledge',
                   role: 'accept_all'
